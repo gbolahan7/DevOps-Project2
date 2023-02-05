@@ -92,6 +92,9 @@
 ### Access the file on the web using the public IP in the Nginx config file
 ![nginx phpweb](./images/end.PNG)
 
+### Remove file created because of potential sensitive information leak about the php server
+`sudo rm /var/www/your_domain/info.php`
+
 
 
 
