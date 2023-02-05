@@ -43,3 +43,12 @@
 `$ sudo mysql -p` 
 
 
+
+# STEP 3 - INSTALL PHP
+### Nginx and MySQL both installed to serve content and store data respectively. Next, Install PHP to process code and generate dynamic content for the web server 
+
+`$ sudo apt install php-fpm php-mysql`
+![install php](./images/php-install.PNG)
+
+
+
