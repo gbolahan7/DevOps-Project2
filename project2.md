@@ -83,6 +83,18 @@
 ### The LEMP (Linux, Nginx, MySQL, PHP) stack is now configured.
 
 
+# STEP 5 - TESTING PHP WITH NGINX
+
+### Create a test php file in the document root
+`sudo nano /var/www/projectLEMP/info.php`
+![php test](./images/php-test.PNG)
+
+### Access the file on the web using the public IP in the Nginx config file
+![nginx phpweb](./images/end.PNG)
+
+
+
+
 
 
 
