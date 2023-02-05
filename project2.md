@@ -52,3 +52,40 @@
 
 
 
+# STEP 4 - CONFIGURE NGINX TO USE PHP PROCESSOR
+### Create root web directory for your domain
+`$ sudo mkdir /var/www/projectLEMP`
+### Assign ownership of the directory with $USER env variable
+`sudo chown -R $USER:$USER /var/www/projectLEMP`
+### Open a new config file in Nginx's sites-available directory using 'nano'
+`sudo nano /etc/nginx/sites-available/projectLEMP`
+![nginx config](./images/nginx-config.PNG)
+
+### Activate the config by linking to the config file from Nginx's sites-enabled directory
+`sudo ln -s /etc/nginx/sites-available/projectLEMP /etc/nginx/sites-enabled/`
+### Test configuration for syntax errors
+`$ sudo nginx -t`
+![nginx syntaxtest](./images/nginx-syntaxtest.PNG)
+
+### Disable default Nginx host that is currently configured to listen on port 80:
+`sudo unlink /etc/nginx/sites-enabled/default`
+
+### Reload Niginx to apply changes
+`sudo systemctl reload nginx`
+
+### Create an index.html file in the web root /var/www/projectLEMP
+`sudo echo 'Hello LEMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectLEMP/index.html`
+
+### Access the website via IP address
+`http://<Public-IP-Address>:80`
+![nginx new-web](./images/newNginx-web.PNG)
+
+### The LEMP (Linux, Nginx, MySQL, PHP) stack is now configured.
+
+
+
+
+
+
+
+
