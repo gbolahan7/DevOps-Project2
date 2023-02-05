@@ -23,3 +23,23 @@
 `http://<Public-IP-Address>:80`
 ![nginx web](./images/nginxe-web.PNG)
 
+
+
+# STEP 2 - INSTALL MYSQL
+
+## Install MYSQL using 'apt'
+`$ sudo apt install mysql-server`
+![mysql install](./images/sudo-mysql.PNG)
+
+## Login into MySQL console
+`$ sudo mysql`
+![mysql login](./images/mysql-logintest.PNG)
+
+
+## Interactive script to configure password
+`$ sudo mysql_secure_installation`
+
+## test the login into MySQL Console
+`$ sudo mysql -p` 
+
+
