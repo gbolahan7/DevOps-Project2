@@ -97,6 +97,66 @@
 
 
 
+# STEP 6 - RETRIEVING DATA FROM MYSQL DB USING PHP
+
+### Connect to MySQL
+`$ sudo mysql`
+
+### Create a new db 
+`CREATE DATABASE test_db;`
+
+### Create new user and grant full privileges on db 
+`CREATE USER 'test_user'@'%' IDENTIFIED WITH mysql_native_password BY 'test_password';`
+
+### Grant permissionover the test_db datatbase:
+`GRANT ALL ON test_database.* TO 'test_user'@'%';`
+
+### Confirm if user now has the permissions
+`$ mysql -u test_user -p`
+![db login](./images/db-logintest.PNG)
+
+
+### NB: This will prompt a password used when creating the test user.
+
+### Confirm access to database
+`SHOW DATABASES`
+![show db](./images/SHOW-DB.PNG)
+
+### Create a test table 
+`CREATE TABLE example_database.todo_list` `(`
+  `item_id INT AUTO_INCREMENT,`
+  `content VARCHAR(255),`
+  `PRIMARY KEY(item_id));`
+
+### Insert few rows of data in to the table
+`INSERT INTO example_database.todo_list (content) VALUES ("First important item");`
+
+### Confirm data is saved to the table
+`SELECT * FROM example_database.todo_list;`
+![addData db](./images/add-db.PNG)
+
+### Create PHP script to connect to MySQL usinf nano:
+`nano /var/www/projectLEMP/todo_list.php`
+
+### Copy the following line of codes into the todo_list.php script
+![query php](./images/php-querydb.PNG)
+
+
+### Access the page in the web via the public IP address
+`http://<Public_domain_or_IP>/todo_list.php`
+![todo web](./images/todo_web.PNG)
+ 
+ ### PHP environment setup is now complete and ready to connect with MySQL server
+
+
+
+
+
+
+
+
+
+
 
 
 
